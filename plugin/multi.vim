@@ -33,9 +33,12 @@ function! s:multi_on(bang, arg)
 endfunction
 
 function! s:multi_off()
-  au! InsertCharPre <buffer>
-  au! InsertLeave <buffer>
-  imapclear <buffer>
+  augroup MultiGroup
+    au!
+  augroup END
+  iunmap <buffer> <cr>
+  iunmap <buffer> <bs>
+  iunmap <buffer> <del>
   match NONE
   return ''
 endfunction
