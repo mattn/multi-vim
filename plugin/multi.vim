@@ -36,9 +36,9 @@ function! s:multi_off()
   augroup MultiGroup
     au!
   augroup END
-  iunmap <buffer> <cr>
-  iunmap <buffer> <bs>
-  iunmap <buffer> <del>
+  silent! iunmap <buffer> <cr>
+  silent! iunmap <buffer> <bs>
+  silent! iunmap <buffer> <del>
   match NONE
   return ''
 endfunction
